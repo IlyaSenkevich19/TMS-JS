@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/hw_2.js" type="module"></script>
+</head>
+<body>
+
+    <form name="form" onsubmit="getAge(this);return false">
+        Введите свою дату рождения:
+        <input type="date" name="mydate" >
+        <input type='submit' value='Результат'><br>
+        Ваш возраст в секундах: <input type='text' name="res" ><br>
+    </form>
+
+    <form action="">
+        <input type="text" placeholder="insert tour firsname" class="username">
+        <input type="text" placeholder="insert your age" class="userage">
+    </form>
+
+    <script type='text/javascript'>
+        const getAge = form => {
+                const date = form.mydate.value;
+                
+                const age = ((new Date().getTime() - new Date(date)) / 1000) | 0;
+                form.res.value = age;        
+        }   
+    </script>
+</body>
+</html>
