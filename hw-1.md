@@ -17,7 +17,7 @@
 + Добавьте туда `console.log('Hello World!')`
 + Затем используя команду `git add hw_1.js` внесите изменения в индекс
 + Не забудем оставить комментарий к сохранению и напишем `git commit -m 'init(hw_1): start course Javascript Basic'`
-+ Наконец отправим изменения на **github** с помощью команды `git push`
++ Наконец отправим изменения на **github** с помощью команды `git push origin branch_Alexandr`
 
 + Перейдите на сайт github и зайдите в ветку `name-hw_1`
 + Нажмите клавишу `compare & pull request`
