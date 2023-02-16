@@ -202,5 +202,5 @@ alert (`((${num1} - ${num2}) + ${num3}) * ${num4} / ${num5} = ${result}`);
 let step = '';
 for (let i = 1; i < 7; i++) {
     step += '#'
-    console.log(step + '\n');
+    console.log(step);
 };
