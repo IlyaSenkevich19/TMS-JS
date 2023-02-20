@@ -74,10 +74,9 @@ let c = "белых медведей";
 const resultOneForTaskFour = String(a) + b + ' ' + c;
 const resultTwoForTaskFour = a + (b + ' ' + c);
 
-
-console.log('первый вариант: ', resultOneForTaskFour, 
-    '\n', 'второй вариант: ', resultTwoForTaskFour,
-    '\n', 'третий вариант: ', `${a}${b} ${c}`);
+console.log(`первый вариант: ${resultOneForTaskFour}, 
+второй вариант: ${resultTwoForTaskFour},
+третий вариант:  ${a}${b} ${c}`);
 
     // #### Task 5 💻
 
@@ -133,7 +132,13 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector(".userage").value = ""
         }
     })
-})
+});
+
+let firstName = prompt('Insert your name');
+let age = +prompt('Insert your age');
+
+console.log(`User name: ${firstName}
+User age: ${age}`);
 
 // Поменяйте значение переменных местами не создавая дополнительной переменной:
 
