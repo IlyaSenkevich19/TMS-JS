@@ -1,10 +1,10 @@
 //     Task 1
 
-let str = "true";
-let boo = false;
-let num = 17;
-let und = undefined;
-let nul = null;
+const str = "true";
+const boo = false;
+const num = 17;
+const und = undefined;
+const nul = null;
 
 console.log(typeof str, typeof boo, typeof num, typeof und, typeof nul);
 
@@ -40,14 +40,16 @@ console.log(shouldGoToWork);
 
 //     Task 5
 
-let numFB = prompt("Введите число");
+let numFB = +prompt("Введите число");
 
-if (numFB % 5 === 0) {
-  console.log("Fiz");
+if (numFB % 5 === 0 && numFB % 3 === 0) {
+  console.log("FizBuz");
 } else if (numFB % 3 === 0) {
   console.log("Buz");
-} else if (numFB % 5 === 0 && numFB % 3 === 0) {
-  console.log("FizBuz");
+} else if (numFB % 5 === 0) {
+  console.log("Fiz");
+} else {
+  console.log("not Fiz, not Buz, not FizBuz");
 }
 
 //     Task 6
@@ -57,28 +59,33 @@ let age = prompt("Укажите ваш возраст");
 if (age > 18) {
   alert("Попей пивка");
 } else if (age >= 16 && age <= 18) {
-  akert("Можешь выкурить сигаретку, только маме не говори");
+  alert("Можешь выкурить сигаретку, только маме не говори");
 } else {
   alert("Пей колу");
 }
 
 //     Task 7
 
+const south = "юг";
+const north = "север";
+const west = "запад";
+const east = "восток";
+
 let side = prompt(
   "В какую сторону света вы хотели бы отправиться?"
 ).toLocaleLowerCase();
 
 switch (side) {
-  case "юг":
+  case south:
     alert("на юг пойдешь счастье найдешь");
     break;
-  case "север":
+  case north:
     alert("на север пойдешь много денег найдешь");
     break;
-  case "запад":
+  case west:
     alert("на запад пойдешь верного друга найдешь");
     break;
-  case "восток":
+  case east:
     alert("на восток пойдешь разработчиком станешь");
     break;
   default:
@@ -96,11 +103,11 @@ alert(`Привет, ${firstNameOk} ${lastNameOk} !`);
 
 //     Task 2
 
-let numb = prompt("Введите число");
-let subtract = prompt("Сколько отнять");
-let fold = prompt("Сколько прибавить");
-let multiply = prompt("На сколько умножить");
-let divide = prompt("На сколько разделить");
+let numb = +prompt("Введите число");
+let subtract = +prompt("Сколько отнять");
+let fold = +prompt("Сколько прибавить");
+let multiply = +prompt("На сколько умножить");
+let divide = +prompt("На сколько разделить");
 
 let result = ((numb - subtract + +fold) * multiply) / divide;
 
