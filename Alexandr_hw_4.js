@@ -7,7 +7,7 @@
 // function getSum (con){
 //     let sum = 0;
 //     for (let i = 0; i <= con; i++){
-//         sum = sum + i;
+//         sum += i;
 //     }
 //     return sum
 // }
@@ -15,10 +15,10 @@
 
 // #### Task 2 💻
 
-// const PERSENT = 17;
-// const AGE = 5;
+// const persent = 17;
+// const age = 5;
 // function sumCredit (credit){
-//     let plusCredit = AGE * ((credit * 17) / 100);
+//     let plusCredit = age * ((credit * persent) / 100);
 //     console.log(plusCredit);
 
 // }
@@ -57,7 +57,7 @@
 // #### Task 5 💻
 
 // function getSum(a, b){
-//     if (a == b){
+//     if (a === b){
 //         return a;
 //     }
 //     else if (a > b){
@@ -75,15 +75,15 @@
 
 // #### Task 6 💻
 
-// const foo = function(){
-//     return "Name FOO";
-// }
-// const boo = function(){
-//     return "Name BOO";
-// }
+const foo = function(){
+    return "Name FOO";
+}
+const boo = function(){
+    return "Name BOO";
+}
 
 // function fooboo (tubel, floo, bloo){
-//     if (tubel == true){
+//     if (tubel){
 //         return floo();
 //     }
 //     else {
@@ -97,12 +97,7 @@
 // #### Task 1 👨‍🏫
 
 // function triangle (a, b, c) {
-//     if (a + b < c || a + c < b || b + c < a || a < 0 || b < 0 || c < 0){
-//         return false;
-//     }
-//     else {
-//         return true;
-//     }
+//   return (a + b < c || a + c < b || b + c < a || a < 0 || b < 0 || c < 0);
 // }
 // console.log(triangle(-3, 4, 2));
 
@@ -139,27 +134,27 @@ function tax(PHONE_PRICE) {
   return (PHONE_PRICE * TAX_RATE) / 100;
 }
 
-function formationPrise(PURCHASE_COST) {
+function formationPrice(PURCHASE_COST) {
   return `${PURCHASE_COST.toFixed(2)} $`;
 }
 
-function prisePhone() {
+function pricePhone() {
   while (PURCHASE_COST < accountBalance) {
     PURCHASE_COST += Number(PHONE_PRICE + tax(PHONE_PRICE) + ACCESSORY_PRICE);
     if (PURCHASE_COST > accountBalance){
         return alert("Мало деньжат братишка")
     }
     count++;
-    alert(`Сейчас Вы купили телефонов в количестве ${count} за ${formationPrise(PURCHASE_COST)}`);
+    alert(`Сейчас Вы купили телефонов в количестве ${count} за ${formationPrice(PURCHASE_COST)}`);
     let whatYouThin = confirm("Будем покупать ещё?")
     if (whatYouThin){
         continue;
     }
     else{
-        return alert(`Всего Вы купили телефонов в количестве ${count} за ${formationPrise(PURCHASE_COST)}`);
+        return alert(`Всего Вы купили телефонов в количестве ${count} за ${formationPrice(PURCHASE_COST)}`);
     }
   }
-  alert(`Всего Вы купили ${count} телефонов за ${formationPrise(PURCHASE_COST)}`);
+  alert(`Всего Вы купили ${count} телефонов за ${formationPrice(PURCHASE_COST)}`);
 }
 
-prisePhone();
+pricePhone();
