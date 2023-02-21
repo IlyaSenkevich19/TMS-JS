@@ -110,10 +110,9 @@ const firstV = true;
 const secondV = 'bmx';
 const thirdV = 2020;
 
-console.log(`Variable: %firstV% have type: %${typeof firstV}%
-    \n Variable: %secondV% have type: %${typeof secondV}%
-    \n Variable: %thirdV% have type: %${typeof thirdV}%
-    \n p.s. не понимаю - нах символы процентов в тз? но тз есть тз`);
+console.log(`Variable: %firstV% have type: %${typeof firstV}% 
+Variable: %secondV% have type: %${typeof secondV}%
+Variable: %thirdV% have type: %${typeof thirdV}%`);
 
 // #### Task 7 💻
 
