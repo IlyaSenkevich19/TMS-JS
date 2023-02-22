@@ -58,8 +58,7 @@ fooboo(prompt('введите true или false').toLowerCase(), foo.name, boo.n
 // ADVANCED level
 // Task 1
 function triangle (a, b, c){
-    if (a+b>c && a+c>b && b+c>a) {return true}
-    else {return false};
+    return (a+b>c && a+c>b && b+c>a)
 }
 triangle(2,2,3)
 
