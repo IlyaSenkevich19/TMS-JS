@@ -56,22 +56,25 @@
 
 // #### Task 5 💻
 
-// function getSum(a, b){
-//     if (a === b){
-//         return a;
-//     }
-//     else if (a > b){
-//         return a +b;
-//     }
-//     else {
-//         let sumAB = 0;
-//         for (let i = a; i <= b; i++){
-//             sumAB += i;
-//         }
-//         return sumAB;
-//     }
-// }
-// console.log(getSum(-1, 2));
+function getSum(a, b){
+  let sumAB = 0;
+    if (a === b){
+        return a;
+    }
+    else if (a > b){
+      for (let i = b; i >= a; i--){
+        sumAB += i;
+    }
+    }
+    else {
+        for (let i = a; i <= b; i++){
+            sumAB += i;
+        }
+        return sumAB;
+    }
+}
+console.log(getSum(-1, 2));
+console.log(getSum(5, 7));
 
 // #### Task 6 💻
 
