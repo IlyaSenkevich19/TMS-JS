@@ -53,3 +53,18 @@ function sumSalaries (salaries) {
     return Object.values(salaries).reduce((a, b) => a + b, 0)
 }
 console.log (sumSalaries(salaries))
+///6
+let login = prompt ('Введите ваше имя');
+let password = prompt ('Введите пароль');
+const userData = {
+    login: login,
+    password: password,
+};
+let secondLogin = prompt ('Введите ваше имя');
+let secondPassword = prompt ('Введите пароль');
+if (userData.login === secondLogin && userData.password === secondPassword) {
+    alert ('Добро пожаловать')
+}
+else {
+    alert ('Проверьте введенные данные')
+}
