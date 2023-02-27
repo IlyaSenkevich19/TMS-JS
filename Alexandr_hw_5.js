@@ -195,12 +195,19 @@
 // let userAnimal = prompt("Введи чьё имя ты хочешь узнать!");
 // alert(exim(animals, userAnimal));
 
-// // Или так
+// Или так
 
-// let usersAnimal = prompt("Введи чьё имя ты хочешь узнать!");
-// function Animal(usersAnimal) {
-//   this.name = "Такое имя не определено";
-//   this.age = "Такое имя не определено";
-// }
-// let userAnimals = new Animal(usersAnimal);
-// alert(userAnimals.name);
+let usersAnimal = prompt("Введи чьё имя ты хочешь узнать!");
+const animals = {
+  name: "Такого животного нет в списке",
+  cat: {
+    name: "Енчик",
+    age: 3,
+  },
+  dog: {
+    name: "Орео",
+    age: 2,
+  },
+};
+
+alert(animals[usersAnimal]? animals[usersAnimal].name: undefined);
