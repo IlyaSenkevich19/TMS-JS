@@ -160,12 +160,22 @@ let student2 = {
     age: 27,
 };
 
-function objectsCompare (obj1, obj2) {
-    return Object.keys(obj1).toString + Object.values(obj1) === 
-    Object.keys(obj2).toString + Object.values(obj2)
+function objectCompare(obj1, obj2) {
+    for (let key in obj1) {
+        if ((`${key}: ${obj1[key]}`) !== (`${key}: ${obj2[key]}`)) {
+        return false
+        }
+    }
+
+    for (let key in obj2) {
+        if ((`${key}: ${obj2[key]}`) !== (`${key}: ${obj1[key]}`)) {
+        return false
+        }
+    }
+    return true
 };
 
-console.log(objectsCompare(student1, student2));
+console.log(objectCompare(student1, student2));
 
 // #### Task 3 🖥
 
