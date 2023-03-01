@@ -92,6 +92,12 @@ const allNumbers = evenNumbers.concat(oddNumbers);
 
 console.log(allNumbers.indexOf(8));
 
+// Second solution
+
+const allNumbersSecond = [ ...evenNumbers, ...oddNumbers];
+
+console.log(allNumbersSecond.indexOf(8));
+
 // #### Task 7 🖥
 
 // Дан массив:
@@ -143,7 +149,7 @@ const matrix = [
 
 function average () {
     let count = 0;
-    let sum =0;
+    let sum = 0;
     for (let items of matrix) {
         count += items.length
         for (let item of items) {
