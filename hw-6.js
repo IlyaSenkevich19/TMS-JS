@@ -161,6 +161,10 @@ function average () {
 
 console.log(average(matrix));
 
+const average2 = (arr) => arr.flat().reduce((sum, el) => sum + el) / arr.flat().length;
+
+console.log(average2(matrix));
+
 // #### Task 3 👨‍🏫
 
 // Дан массив:
