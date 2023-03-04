@@ -26,7 +26,7 @@ const users = ['Darya', 'Masha', 'Denis', 'Vitaliy', 'Polina', 'Anton'];
 // > Реализуйте решение двумя способами, используя `function declaration` & `arrow function`.
 
 const mapUsers = users.map(function(el, i) {
-    return `Member ${++i}: ${el}`
+    return `Member ${++i}: ${el}`;
 });
 
 const mapUsers2 = users.map((el, i) => `Member ${++i}: ${el}`);
@@ -40,7 +40,7 @@ const numbers = [7, -4, 32, -90, 54, 32, -21];
 // > Реализуйте решение двумя способами, используя `function declaration` & `arrow function`.
 
 const positiveNumbers = numbers.filter(function(el) {
-    return el >= 0
+    return el >= 0;
 });
 
 const positiveNumbers2 = numbers.filter((el) => el >= 0);
@@ -54,7 +54,7 @@ const positiveNumbers2 = numbers.filter((el) => el >= 0);
 // > Реализуйте решение двумя способами, используя `function declaration` & `arrow function`.
 
 const sumFibonacci = fibonacci.reduce(function(sum, el) {
-    return sum + el
+    return sum + el;
 });
 
 const sumFibonacci2 = fibonacci.reduce((sum, el) => sum + el);
@@ -68,7 +68,7 @@ const numbers2 = [5, 9, 13, 24, 54, 10, 13, 99, 1, 5];
 // > Реализуйте решение двумя способами, используя `function declaration` & `arrow function`.
 
 const firstEvenNumber = numbers2.find(function(el) {
-    return el % 2 === 0
+    return el % 2 === 0;
 });
 
 const firstEvenNumber2 = numbers2.find((el) => el % 2 === 0);
@@ -100,15 +100,15 @@ function Student(salary, rate, name) {
         B: 9,
         C: 6,
         D: 0,
-    }
+    };
 
     this.salary = salary
     this.rate = rate
     this.name = name
 
     this.getCreditAmount = function () {
-      return this.salary * rates[this.rate]
-    }
+      return this.salary * rates[this.rate];
+    };
 };
 
 const students = [
@@ -141,7 +141,6 @@ const withoutVowels = (string) =>
         .split('')
         .filter((el) => !vowels.includes(el.toLowerCase()))
         .join('');
-
 
 console.log(withoutVowels('This website is for losers LOL!'));
 
@@ -201,6 +200,20 @@ console.log(maxMinNumbers('1 2 -3 4 5'));
 //     isIsogram("moOse") == false // -- ignore letter case
 // ```
 
+function isIsogram(str) {
+    str = str.toLowerCase();
+    let arr = str.split('');
+
+    for (let el of arr) {
+        if (str.split(el).length !== 2) {
+        return false
+        } else return true
+    };
+};
+
+console.log(isIsogram('Dermatoglyphics'));
+console.log(isIsogram('aba'));
+
 // #### Task 6 👨‍🏫 Считаем коды символов
 
 // + Учитывая строку, превратите каждый символ в его код символа ASCII и соедините их вместе, 
@@ -211,6 +224,32 @@ console.log(maxMinNumbers('1 2 -3 4 5'));
 // + После верните разницу между суммой цифр **`total1`** и **`total2`**
 
 // > 'ABC' --> 'A' = 65, 'B' = 66, 'C' = 67 --> 656667
+
+function charCodeRofl(str) {
+    let arrStr = str.split('');
+    let preTotal1 = [];
+
+    for (let el of arrStr) {
+        preTotal1.push(el.charCodeAt())
+    };
+
+    let total1 = preTotal1.join('');
+    let preTotal2 = [];
+
+    for (let item of preTotal1.join('').split('')) {
+        if (item === '7') {
+        preTotal2.push('1')
+        } else preTotal2.push(item)
+    };
+
+    let total2 = preTotal2.join('');
+    let sumTotal1 = total1.split('').reduce((a, b) => a + +b, 0);
+    let sumTotal2 = total2.split('').reduce((a, b) => a + +b, 0);
+
+    return sumTotal1 - sumTotal2;
+};
+
+console.log(charCodeRofl('ABC'));
 
 // #### Task 7 👨‍🏫 Дубликаты
 
@@ -227,3 +266,19 @@ console.log(maxMinNumbers('1 2 -3 4 5'));
 //     "Success" => ")())())"
 //     "(( @" => "))(("
 // ```
+
+function nihao(str) {
+    str = str.toLowerCase();
+    let arr = str.split('');
+    let result = [];
+
+    for (let el of arr) {
+        if (str.split(el).length !== 2) {
+        result.push(')')
+        } else result.push('(')
+    }
+
+    return result.join('');
+};
+
+console.log(nihao('Success'));
