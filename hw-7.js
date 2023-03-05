@@ -251,6 +251,21 @@ function charCodeRofl(str) {
 
 console.log(charCodeRofl('ABC'));
 
+// second soluyion
+
+function charCodeRofl2(str) {
+    const arrStr = str.split('');
+    const total1 = arrStr.map(el => el.charCodeAt()).join('');
+    const total2 = total1.split('').map(el => el === '7' ? '1' : el).join('') 
+
+    const sumTotal1 = total1.split('').map(Number).reduce((a, b) => a + b, 0);
+    const sumTotal2 = total2.split('').map(Number).reduce((a, b) => a + b, 0);
+
+    return sumTotal1 - sumTotal2;
+};
+
+console.log(charCodeRofl2('ABC'));
+
 // #### Task 7 👨‍🏫 Дубликаты
 
 // + Цель этого упражнения - преобразовать строку в новую строку, где каждый символ 
