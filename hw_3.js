@@ -38,11 +38,11 @@ console.log(shouldGoToWork);
 // #### Task 5 💻
 
 let inputNumber = prompt("Введите число :");
-if (inputNumber % 5 == 0 && inputNumber % 3 == 0) {
+if (inputNumber % 5 === 0 && inputNumber % 3 === 0) {
   alert("FizBuz");
-} else if (inputNumber % 3 == 0) {
+} else if (inputNumber % 3 === 0) {
   alert("Buz");
-} else if (inputNumber % 5 == 0) {
+} else if (inputNumber % 5 === 0) {
   alert("Fiz");
 } else {
   alert("Не, введи кратное пяти или трем");
