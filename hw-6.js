@@ -1,4 +1,4 @@
-///1////
+///1////это дз!!
 const colors = ['red', 'green', 'blue'];
 console.log(colors.length);
 
