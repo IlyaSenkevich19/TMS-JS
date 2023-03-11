@@ -25,12 +25,25 @@
     background-color: rgb(108, 228, 207);
     font-size: 24px;
     color: rgb(95, 95, 95);
+    cursor: pointer;
 }
-.reset,
-.checkbox {
-    width: 70px;
-    height: 40px;
-    border-radius: 8px;
+.button:hover,
+.checkbox:hover,
+.reset:hover,
+.checkbox:hover {
+    background-color: rgb(69, 115, 144);
+    color: aliceblue;
+    box-shadow: 4px 8px 20px 4px rgba(0, 0, 0, 0.8);
+    transition: 0.8s;
+}
+.button:active,
+.checkbox:active,
+.reset:active,
+.checkbox:active {
+    background-color: rgb(108, 228, 207);
+    color: rgb(95, 95, 95);
+    box-shadow: none;
+    transition: 0.2s;
 }
 .input {
     width: 550px;
