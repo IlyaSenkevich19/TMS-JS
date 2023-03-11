@@ -1,0 +1,78 @@
+.main {
+    margin: 50px auto;
+    width: 1170px;
+    background-color: rgb(213, 213, 213);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: solid 2px black;
+    border-radius: 30px;
+    font-size: 24px;
+}
+.button,
+.checkbox,
+.input,
+.reset {
+    border: solid 2px black;
+    border-radius: 10px;
+    margin: 20px;
+}
+.button,
+.checkbox,
+.reset {
+    width: 150px;
+    height: 60px;
+    background-color: rgb(108, 228, 207);
+    font-size: 24px;
+    color: rgb(95, 95, 95);
+}
+.reset,
+.checkbox {
+    width: 70px;
+    height: 40px;
+    border-radius: 8px;
+}
+.input {
+    width: 550px;
+    outline: none;
+    text-align: center;
+    font-size: 24px;
+}
+.todo {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    height: 150px;
+    border: solid 2px black;
+    border-radius: 18px;
+    margin: 16px;
+    text-align: center;
+}
+.text {
+    margin: 10px;
+    margin-top: 36px;
+    color: rgb(95, 95, 95);
+}
+.innerText {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    background-color: white;
+    width: 500px;
+    height: 50px;
+    padding-top: 30px;
+    border-radius: 6px;
+    color: rgb(95, 95, 95);
+}
+.date {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    background-color: white;
+    width: 120px;
+    height: 30px;
+    padding-top: 8px;
+    border-radius: 6px;
+    margin-right: 25px;
+    color: rgb(95, 95, 95);
+}
