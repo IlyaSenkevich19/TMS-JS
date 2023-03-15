@@ -30,11 +30,16 @@
 .button:hover,
 .checkbox:hover,
 .reset:hover,
-.checkbox:hover {
+.checkbox:hover,
+.button:focus,
+.checkbox:focus,
+.reset:focus,
+.checkbox:focus {
     background-color: rgb(69, 115, 144);
     color: aliceblue;
     box-shadow: 4px 8px 20px 4px rgba(0, 0, 0, 0.8);
     transition: 0.8s;
+    outline: none;
 }
 .button:active,
 .checkbox:active,
