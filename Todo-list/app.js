@@ -11,15 +11,16 @@ buttonTwoElement.textContent = 'Delete Last';
 const inputElement = document.createElement('input');
 inputElement.classList.add('input');
 inputElement.setAttribute('placeholder', 'Enter todo...');
-const buttonThreeElement = document.createElement('button');
-buttonThreeElement.classList.add('button');
-buttonThreeElement.textContent = 'Add';
+const buttonAddElement = document.createElement('button');
+buttonAddElement.classList.add('button');
+buttonAddElement.textContent = 'Add';
 const textOneElement = document.createElement('div');
 textOneElement.classList.add('text');
-textOneElement.textContent = 'All: 2';
+textOneElement.textContent = 'All: ';
+const countAllElement = document.createElement('div');
 const textTwoElement = document.createElement('div');
 textTwoElement.classList.add('text');
-textTwoElement.textContent = 'Completed: 1';
+textTwoElement.textContent = `Completed: `;
 const buttonFourElement = document.createElement('button');
 buttonFourElement.classList.add('button');
 buttonFourElement.textContent = 'Show All';
@@ -37,20 +38,24 @@ innerOneElement.classList.add('todo');
 innerOneElement.style.backgroundColor = 'rgb(146, 146, 146)';
 const innerTwoElement = document.createElement('div');
 innerTwoElement.classList.add('todo');
+const wrapperTodoElement = document.createElement('div');
 
 mainDivElement.prepend(
     buttonOneElement,
     buttonTwoElement,
     inputElement,
-    buttonThreeElement,
+    buttonAddElement,
     textOneElement,
     textTwoElement,
     buttonFourElement,
     buttonFiveElement,
     inputTwoElement,
-    innerOneElement,
-    innerTwoElement
+    // innerOneElement,
+    // innerTwoElement,
+    wrapperTodoElement
 );
+
+textOneElement.prepend(countAllElement);
 
 const checkboxOneElement = document.createElement('button');
 checkboxOneElement.classList.add('checkbox');
@@ -107,3 +112,49 @@ innerDivTwoElement.prepend(
     resetTwoElement,
     dateTwoElement
 );
+
+function buildTodoTemplate() {
+    if (inputElement.value) {
+        const todoText = inputElement.value;
+        const idTodo = Date.now();
+        const date = new Date().toLocaleDateString();
+        const template = `<div class='todo' id='${idTodo}'>
+                                <button class='checkbox'></button>
+                                <div class='innerText'>${todoText}</div>
+                                <div class='innerDiv'>
+                                    <button class='reset'>X</button>
+                                    <div class='date'>${date}</div>
+                                </div>
+                            </div>`
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = template;
+        inputElement.value = '';
+        return wrapperTodoElement.append(wrapper);
+    };
+};
+
+function toggleCheckbox({target}){
+    if (target.classList.contains('checkbox') && target.parentElement.classList.contains('checked')) {
+        target.parentElement.classList.remove('checked');
+        target.innerText = '';
+    } else if (target.classList.contains('checkbox'))  {
+        target.parentElement.classList.add('checked');
+        target.innerText = 'V';
+    };
+};
+
+function deleteTodo({target}){
+    if (target.classList.contains('reset')) {
+        target.parentElement.parentElement.parentElement.innerHTML = ''
+    };
+};
+
+function deleteAll() {
+    wrapperTodoElement.innerHTML = ''
+}
+
+buttonOneElement.addEventListener('click', deleteAll)
+wrapperTodoElement.addEventListener('click', toggleCheckbox);
+wrapperTodoElement.addEventListener('click', deleteTodo);
+buttonAddElement.addEventListener('click', buildTodoTemplate);
+

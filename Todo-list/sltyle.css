@@ -27,6 +27,9 @@
     color: rgb(95, 95, 95);
     cursor: pointer;
 }
+.checkbox{
+    margin-top: 40px;
+}
 .button:hover,
 .checkbox:hover,
 .reset:hover,
@@ -65,6 +68,13 @@
     border-radius: 18px;
     margin: 16px;
     text-align: center;
+}
+.checked {
+    background-color:  rgb(146, 146, 146);
+}
+.checked .innerText {
+    /* background-color: black; */
+    text-decoration: line-through;
 }
 .text {
     margin: 10px;
