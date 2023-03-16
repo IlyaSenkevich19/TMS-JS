@@ -45,9 +45,10 @@ secondUpperDiv.style.cssText = `
         font-size: 30px;
         text-align: center;
         color: silver;
+        outline-style: none;
     `;
 
-secondUpperDiv.setAttribute("value", "Enter todo...");
+secondUpperDiv.setAttribute("placeholder", "Enter todo...");
 let thirdUpperDiv = firstUpperDiv.cloneNode();
 thirdUpperDiv.innerHTML = "Add";
 upperBlock.append(firstUpperDiv);
@@ -83,7 +84,7 @@ firstMediumDiv.style.cssText = `
 firstMediumDiv.innerHTML = ` <img src="D:/js TMS/lesson 1/TMS-JS/Todo-list/resurs/free-icon-check-mark-3489824.png" alt="" width="30%" height="50%">`;
 let secondMediumDiv = secondUpperDiv.cloneNode();
 secondMediumDiv.style.color = "black";
-secondMediumDiv.value = "Todo text";
+secondMediumDiv.placeholder = "Todo text";
 secondMediumDiv.style.height = "50%";
 secondMediumDiv.style.width = "60%";
 secondMediumDiv.style.color = "DimGrey";
@@ -124,8 +125,9 @@ dateDiv.style.cssText = `
         text-align: center;
         color: grey;
         border: none;
+        outline-style: none;
 `;
-dateDiv.setAttribute("value", "Date");
+dateDiv.setAttribute("placeholder", "Date");
 
 mediumDiv.append(firstMediumDiv);
 mediumDiv.append(secondMediumDiv);
@@ -198,7 +200,7 @@ secondDiv.append(showComplited);
 
 let search = enterTodo.cloneNode();
 search.style.width = "25%";
-search.value = "Search";
+search.placeholder = "Search";
 
 secondDiv.append(search);
 
