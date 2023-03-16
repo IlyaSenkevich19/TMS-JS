@@ -1,0 +1,29 @@
+body {
+    margin: 0 auto;
+}
+.www,
+.qqq {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+}
+.qqq {
+    justify-content: center;
+}
+input {
+    width: 210px;
+    height: 120px;
+    background-color: lightblue;
+    border-radius: 20px;
+}
+.one,
+.two,
+.three {
+    display: none;
+}
+
+.four {
+    display: flex;
+    font-size: 92px;
+}
