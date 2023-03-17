@@ -1,12 +1,18 @@
 body {
     margin: 0 auto;
 }
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
 .www,
 .qqq {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 100px;
+    padding: 30px;
+    height: 100px;
 }
 .qqq {
     justify-content: center;
@@ -20,10 +26,16 @@ input {
 .one,
 .two,
 .three {
+    position: absolute;
     display: none;
+    margin: 0;
+    padding: 0;
+    top: 290px;
 }
 
 .four {
     display: flex;
     font-size: 92px;
+    margin: 0;
+    padding: 0;
 }

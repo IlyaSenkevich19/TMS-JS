@@ -113,6 +113,15 @@ innerDivTwoElement.prepend(
     dateTwoElement
 );
 
+// const todos = [];
+
+// function Todo (id, createdDate, title, isChecked ){
+//     this.id = id || Date.now();
+//     this.createdDate = createdDate || new Date().toLocaleDateString();
+//     this.title = title;
+//     this.isChecked = isChecked || false;
+// };
+
 function buildTodoTemplate() {
     if (inputElement.value) {
         const todoText = inputElement.value;
@@ -125,7 +134,7 @@ function buildTodoTemplate() {
                                     <button class='reset'>X</button>
                                     <div class='date'>${date}</div>
                                 </div>
-                            </div>`
+                            </div>`;
         const wrapper = document.createElement('div');
         wrapper.innerHTML = template;
         inputElement.value = '';
@@ -145,7 +154,7 @@ function toggleCheckbox({target}){
 
 function deleteTodo({target}){
     if (target.classList.contains('reset')) {
-        target.parentElement.parentElement.parentElement.innerHTML = ''
+        target.parentElement.parentElement.parentElement.innerHTML = '';
     };
 };
 
@@ -153,8 +162,7 @@ function deleteAll() {
     wrapperTodoElement.innerHTML = '';
 };
 
-buttonOneElement.addEventListener('click', deleteAll)
+buttonOneElement.addEventListener('click', deleteAll);
 wrapperTodoElement.addEventListener('click', toggleCheckbox);
 wrapperTodoElement.addEventListener('click', deleteTodo);
 buttonAddElement.addEventListener('click', buildTodoTemplate);
-

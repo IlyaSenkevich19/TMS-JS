@@ -73,7 +73,6 @@
     background-color:  rgb(146, 146, 146);
 }
 .checked .innerText {
-    /* background-color: black; */
     text-decoration: line-through;
 }
 .text {
