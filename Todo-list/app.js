@@ -150,8 +150,8 @@ function deleteTodo({target}){
 };
 
 function deleteAll() {
-    wrapperTodoElement.innerHTML = ''
-}
+    wrapperTodoElement.innerHTML = '';
+};
 
 buttonOneElement.addEventListener('click', deleteAll)
 wrapperTodoElement.addEventListener('click', toggleCheckbox);
