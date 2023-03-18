@@ -32,11 +32,14 @@ upperBlock.append(firstUpperDiv);
 upperBlock.append(upperInput);
 upperBlock.append(thirdUpperDiv);
 
+let tod = document.createElement("div");
+section.append(tod);
+
 function Card(value) {
   this.value = value;
   this.firstMediumDiv = document.createElement("button");
   this.firstMediumDiv.classList.add("cheked");
-  this.firstMediumDiv.innerHTML = ` <img src="D:/js TMS/lesson 1/TMS-JS/todo_click/resurs_click/free-icon-check-mark-3489824.png" id = "chekedImg" alt="" width="30%" height="50%">`;
+  this.firstMediumDiv.innerHTML = `✓`;
 
   this.secondMediumDiv = upperInput.cloneNode();
   this.secondMediumDiv.classList.add("mediumInput");
@@ -49,11 +52,11 @@ function Card(value) {
   this.upDiv.classList.add("upDiv");
   this.cross = document.createElement("button");
   this.cross.classList.add("cross");
-  this.cross.innerHTML = `<img src="D:/js TMS/lesson 1/TMS-JS/todo_click/resurs_click/free-icon-cross-sign-8212742.png" id = "crossImg" alt="" width="40%" height="50%">`;
+  this.cross.innerHTML = `X`;
   this.dateDiv = document.createElement("input");
   this.dateDiv.classList.add("date");
   this.dateDiv.setAttribute("placeholder", "Date");
-  this.dateDiv.value = `${new Date().getDay()}.${new Date().getMonth()}.${new Date().getFullYear()}`;
+  this.dateDiv.value = new Date().toLocaleDateString();
   this.thirdMediumDiv.append(this.upDiv);
   this.upDiv.append(this.cross);
   this.thirdMediumDiv.append(this.dateDiv);
@@ -63,44 +66,44 @@ function Card(value) {
   this.div.append(this.firstMediumDiv);
   this.div.append(this.secondMediumDiv);
   this.div.append(this.thirdMediumDiv);
+  return this.div
 }
 
-let cards = [];
-let i = 0;
 
 thirdUpperDiv.addEventListener("click", function (e) {
-  cards.push(new Card(upperInput.value));
-  section.append(cards[i].div);
-  i++;
+  tod.append(new Card(upperInput.value));
 });
 
 firstUpperDiv.addEventListener("click", function (e) {
   let remov = document.querySelectorAll(".mediumDiv");
   remov.forEach((elem) => elem.remove());
+  let removChek = document.querySelectorAll(".mediumDivChek");
+  removChek.forEach((elem) => elem.remove());
 });
 
-section.addEventListener("click", function (event) {
-  let arrMediumDiv = document.getElementsByClassName("mediumDiv");
-
-  for (let i of arrMediumDiv) {
-    i.addEventListener("click", function (event) {
-      if (event.target.className === "cross") {
-        i.remove();
-      }
-      if (event.target.id === "crossImg") {
-        i.remove();
-      }
-      if (event.target.className === "cheked") {
-        i.childNodes[1].style.textDecoration = "line-through";
-        i.style.background = "DimGrey";
-      }
-      if (event.target.id === "chekedImg") {
-        i.childNodes[1].style.textDecoration = "line-through";
-        i.style.background = "DimGrey";
-      }
-    });
+tod.addEventListener("click", function (event) {
+  if (event.target.classList.contains("cross")) {
+    event.target.parentNode.parentNode.parentNode.remove();
   }
+ 
 });
+
+tod.addEventListener("click", function(event){
+  if (event.target.classList.contains("cheked")) {
+    event.target.parentNode.childNodes[1].style.textDecoration = "line-through";
+    event.target.parentNode.classList.remove("mediumDiv");
+    event.target.parentNode.classList.add("mediumDivChek");
+    event.target.classList.remove("cheked");
+    event.target.classList.add("chekedOn");
+  }
+  else if (event.target.classList.contains("chekedOn") && event.target.parentNode.classList.contains("mediumDivChek")){
+    event.target.parentNode.classList.remove("mediumDivChek");
+    event.target.parentNode.classList.add("mediumDiv");
+    event.target.classList.remove("chekedOn");
+    event.target.classList.add("cheked");
+    event.target.parentNode.childNodes[1].style.textDecoration = "none";
+  }
+})
 
 
 
@@ -170,7 +173,6 @@ section.addEventListener("click", function (event) {
 
 // let secondBlock = document.createElement("div");
 // secondBlock.classList.add("mediumDiv");
-
 
 // secondSection.append(secondBlock);
 // secondBlock.style.width = "60%";
