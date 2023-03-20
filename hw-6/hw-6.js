@@ -63,3 +63,47 @@ const binary = [0, 0, 0, 0];
 str.push(1)
 const str = binary.join("")
 console.log(str)
+
+// ADVANCED level
+
+//Task 1 !!!!!
+function check(){
+
+}
+
+// Task 2 !!!!!
+const matrix = [
+    [12, 98, 78, 65, 23],
+    [54, 76, 98, 43, 65],
+    [13, 324, 65, 312],
+    [9092, 22, 45, 90000],
+];
+let sum = 0;
+let count = 0;
+for(let i = 0; i < matrix.length; i++){
+    for(let j = 0; j <matrix[i].length; j++){
+        sum += matrix[i][j];
+        count++
+    }
+}
+let average = sum / count
+console.log(average)
+
+
+// Task 3 
+const mixedNumbers = [-14, 24, -89, 43, 0 , -1, 412, 4];
+let mixedNumbersFix = mixedNumbers.sort ((a,b) => a - b );
+let minusNum = mixedNumbersFix.splice(0,3);
+console.log(minusNum);
+let plusNum = mixedNumbersFix.splice(1,7);
+console.log(plusNum)
+
+// Task 4 
+let arr = [];
+let cubArr = [];
+for (let i = 0; i < 5; i++) {
+  arr.push(Math.floor(Math.random() * 11));
+  cubArr.push(Math.pow(arr[i], 3));
+}
+console.log(arr);
+console.log(cubArr);
