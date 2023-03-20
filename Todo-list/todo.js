@@ -39,7 +39,7 @@ const mainMenu = document.createElement("div");
 mainMenu.classList.add("main_menu");
 main.append(mainMenu);
 mainMenu.style.cssText = `
-    width: 95%;
+    width: 97%;
     height: 25%;
     margin: 2% 2%;
 `;
@@ -65,14 +65,13 @@ textList.style.cssText = `
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-`
+`;
 
 //mainMenu_first
 const mainMenu_first = document.createElement("div");
 mainMenu_first.classList.add("mainMenu_first");
 mainMenu.append(mainMenu_first);
-mainMenu_first.style.height = "55%"
-
+mainMenu_first.style.height = "70%";
 //formFirst
 const formFirst = document.createElement("form");
 formFirst.classList.add("form");
@@ -81,14 +80,14 @@ formFirst.style.cssText = `
     display:flex;
     justify-content: space-around;
     height: 65%;
-`
+`;
 
 
 //buttonControl
-const buttonControl_Text = ["All", "Delete All", "Delete Last"]
+const buttonControl_Text = ["Add", "Delete All", "Delete Last"]
 for(let i = 0; i < 3; i++){
     const buttonControl = document.createElement("button");
-    buttonControl.classList.add("batton")
+    buttonControl.classList.add(`button_${i}`)
     formFirst.append(buttonControl);
     buttonControl.style.cssText = `
     width: 15%;
@@ -107,9 +106,10 @@ for(let i = 0; i < 3; i++){
 
 //input_todo
 const input_todo = document.createElement("input");
-formFirst.classList.add("input_todo");
+input_todo.classList.add("input_todo");
 formFirst.append(input_todo);
 input_todo.placeholder = "Enter todo...";
+input_todo.type = "text";
 input_todo.style.cssText = `
     width: 45%;
     margin-top: 1%;
@@ -124,10 +124,10 @@ const mainMenu_second = document.createElement("div");
 mainMenu_second.classList.add("mainMenu_second");
 mainMenu.append(mainMenu_second);
 mainMenu_second.style.cssText = `
-    height:  50%;
+    height:  55%;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 `
 
 //information
@@ -171,9 +171,9 @@ formSecond.classList.add("formSecond");
 mainMenu_second.append(formSecond);
 formSecond.style.cssText = `
     display: flex;
-    width: 70%;
-    justify-content: space-around;
-    height:65%;
+    width: 75%;
+    justify-content: space-between;
+    height:80%;
 `
 
 //buttonSecond
@@ -182,9 +182,9 @@ for(let j = 0; j < 2; j++){
     const buttonSecond = document.createElement("button");
     buttonSecond.classList.add("button_second");
     formSecond.append(buttonSecond);
-    buttonSecond.textContent = buttonControl_Text[j];
+    buttonSecond.textContent = buttonSecond_Text[j];
     buttonSecond.style.cssText = `
-        width: 25%;
+        width: 28%;
         height: 100%;
         border-radius: 10px;
         border: 4px solid black;
@@ -211,14 +211,13 @@ for(let y = 0; y < 2; y++){
     boxTodo.classList.add("todo_box");
     textList.append(boxTodo);
     boxTodo.style.cssText = `
-        display: flex; 
+        display: none; 
         justify-content: center;
         border-radius: 10px;
         border: 4px solid black;
         width: 100%;
         height: 40%;
     `;
-
     const formThird = document.createElement("form")
     formThird.classList.add("formThird");
     boxTodo.append(formThird);
@@ -287,6 +286,21 @@ for(let y = 0; y < 2; y++){
             `;
           }  
 }}
+
+//Logics Enter input todo and btnAdd
+
+const enterInput = document.querySelector(".input_todo");
+const btnAdd = document.querySelector(".button_0");
+
+
+// console.log(enterInput);
+// console.log(btnAdd)
+btnAdd.addEventListener("click", () => {
+    const valueEnter = enterInput.value;
+    console.log(valueEnter)
+
+});
+
 
 
 
