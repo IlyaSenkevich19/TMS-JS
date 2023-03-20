@@ -40,7 +40,7 @@ const colors = {
 console.log(colors["ru pum pu ru rum"].red)
 console.log(colors["ru pum pu ru rum"].blue)
 
-//Task 5 !!!!!!!!!!!!!!!
+//Task 5 
 let salaries = {
     andrey: 500,
     sveta: 413,
@@ -48,10 +48,10 @@ let salaries = {
     pasha: 664,
     alexandra: 199
 };
+let sum = 0;
 for(let key in salaries){
-    let sum = 0;
     sum += salaries[key];
-    console.log(sum)
+    console.log(sum / 5)
 };
 
 //Task 6
@@ -71,13 +71,13 @@ if(userProf.newLogin === login && userProf.newPassword === password){
 
 // ADVANCED level
 
-// Task 1
-let check = prompt("Введите номер счета в формате 2:5")
-function boll(){
-    const maxBoll = 9;
-    if(maxBoll > 10){
-        console.log("Игра окончена");
-    }
+// Task 1!!!!!!!
+let sumBoll = prompt("Введите сколько голов забили две команды");
+    maxboll = 9;
+if(sumBoll > 9){
+    console.log("Матч окончен, команды забили максимальное количество голов")
+} else if (sumBoll < 9) {
+    console.log(`Две команды забили: ${sumBoll}`)
 }
 
 // Task 2
@@ -91,7 +91,20 @@ let student2 = {
 };
 console.log(JSON.stringify(student1) === JSON.stringify(student2));
 
-//Task 3 !!!!!!!!!
+//Task 3 
+// const animals = {
+//     cat: {
+//        name: 'Енчик',
+//        age: 3,
+//     },
+//     dog: {
+//        name: 'Орео',
+//        age: 2,
+//     }
+//  }
+//  console.log(animals?.birds)
+
+ // or
 const animals = {
     cat: {
        name: 'Енчик',
@@ -102,4 +115,9 @@ const animals = {
        age: 2,
     }
  }
- console.log(animals?.birds)
+ if ('bird' in animals) {
+    console.log(animals.bird.name);
+ } else {
+    console.log('Птицы в объекте нет');
+ }
+ 
