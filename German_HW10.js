@@ -21,7 +21,7 @@ const menuButtonDel = document.createElement("button");
 toDoMenu.append(menuButtonDel);
 menuButtonDel.classList.add('menuButton');
 menuButtonDel.innerHTML = "Delete All";
-let delElemen = document.querySelectorAll('.itemNew');
+let delElemen = document.querySelectorAll('itemNew');
 menuButtonDel.addEventListener ('click', () => {
     delElemen.forEach((element) => {
         element.remove();
