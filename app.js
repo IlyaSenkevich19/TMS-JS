@@ -49,5 +49,5 @@ button3.addEventListener('click', (e) => {
     setTimeout(() => three.classList.remove('four'), 5000)
 });
 
-localStorage.setItem('name', 'Vatanabe');
-console.log(localStorage.getItem('name'));
+// localStorage.setItem('name', 'Vatanabe');
+// console.log(localStorage.getItem('name'));

@@ -113,56 +113,119 @@ innerDivTwoElement.prepend(
     dateTwoElement
 );
 
-// const todos = [];
+document.addEventListener('DOMContentLoaded', render);
 
-// function Todo (id, createdDate, title, isChecked ){
-//     this.id = id || Date.now();
-//     this.createdDate = createdDate || new Date().toLocaleDateString();
-//     this.title = title;
-//     this.isChecked = isChecked || false;
-// };
+const todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-function buildTodoTemplate() {
-    if (inputElement.value) {
-        const todoText = inputElement.value;
-        const idTodo = Date.now();
-        const date = new Date().toLocaleDateString();
-        const template = `<div class='todo' id='${idTodo}'>
-                                <button class='checkbox'></button>
-                                <div class='innerText'>${todoText}</div>
-                                <div class='innerDiv'>
-                                    <button class='reset'>X</button>
-                                    <div class='date'>${date}</div>
-                                </div>
-                            </div>`;
-        const wrapper = document.createElement('div');
-        wrapper.innerHTML = template;
+function Todo (title, createdDate, id, isChecked ) {
+    this.id = id || Date.now();
+    this.createdDate = createdDate || new Date().toLocaleDateString();
+    this.title = title;
+    this.isChecked = isChecked || false;
+};
+
+function buildTodoTemplate(e) {
+    const date = e.createdDate;
+    const chekedAttr = e.isChecked ? 'checked' : '';
+    const title = e.title || inputElement.value;
+    const isChecked = chekedAttr ? 'V' : '';
+    return `
+    <div class='todo ${chekedAttr}' id='${e.id}'>
+        <button class='checkbox'>${isChecked}</button>
+        <div class='innerText'>${title}</div>
+        <div class='innerDiv'>
+            <button class='reset'>X</button>
+            <div class='date'>${date}</div>
+        </div>
+    </div>`;
+};
+
+function handleSubmitForm() {
+    const titleValue = inputElement.value;
+    if (titleValue) {
+        const todo = new Todo(titleValue);
+        todos.unshift(todo);
         inputElement.value = '';
-        return wrapperTodoElement.append(wrapper);
+        updateLocaleStorage(todos);
+        render();
     };
 };
 
-function toggleCheckbox({target}){
-    if (target.classList.contains('checkbox') && target.parentElement.classList.contains('checked')) {
-        target.parentElement.classList.remove('checked');
-        target.innerText = '';
-    } else if (target.classList.contains('checkbox'))  {
-        target.parentElement.classList.add('checked');
-        target.innerText = 'V';
+function updateLocaleStorage(data){
+    const todos = JSON.stringify(data);
+    localStorage.setItem('todos', todos);
+};
+
+function render() {
+    const data = getItems('todos');
+    const allCounter = JSON.parse(localStorage.getItem('todos'));
+
+    if (!!allCounter) {
+        const completedCounter = allCounter.filter(el => el['isChecked']);
+
+        textOneElement.innerText = `All: ${allCounter.length}`;
+        textTwoElement.innerText = `Completed: ${completedCounter.length}`;
+    } else {
+        textOneElement.innerText = `All: 0`;
+        textTwoElement.innerText = `Completed: 0`;
+    };
+
+    if (data) {
+        const todos = JSON.parse(data);
+        const html = todos.reduce ((total, item) => {
+            const template = buildTodoTemplate(item);
+            return total + template;
+        }, '');
+        wrapperTodoElement.innerHTML = html;
     };
 };
 
-function deleteTodo({target}){
+function getItems() {
+    const items = JSON.stringify(localStorage.getItem('todos'));
+    return items ? JSON.parse(items) : [];
+};
+
+function toggleCheckbox({target}) {
+    if (target.classList.contains('checkbox')) {
+        todos.forEach(el => {
+            if (+target.parentElement.id === el.id) {
+                if (el['isChecked']) {
+                    el['isChecked'] = false;
+                    target.parentElement.classList.remove('checked');
+                    target.innerText = '';
+                } else {
+                    el['isChecked'] = true; 
+                    target.parentElement.classList.add('checked');
+                    target.innerText = 'V';
+                }
+            };
+        })
+    };
+    const count = todos.filter(el => el['isChecked']).length;
+    textTwoElement.innerText = `Completed: ${count}`;
+    updateLocaleStorage(todos);
+};
+
+function deleteTodo({target}) {
     if (target.classList.contains('reset')) {
-        target.parentElement.parentElement.parentElement.innerHTML = '';
+        const storageTodos = JSON.parse(localStorage.getItem('todos'));
+        const deleteId = target.parentElement.parentElement.id;
+        const updateTodos = storageTodos.filter(({id}) => id !== +deleteId);
+        todos.length = 0;
+        updateTodos.forEach(item => todos.unshift(item));
+        updateLocaleStorage(updateTodos);
+        render();
     };
 };
 
 function deleteAll() {
+    localStorage.clear();
     wrapperTodoElement.innerHTML = '';
+    todos.length = 0;
+    render();
 };
 
 buttonOneElement.addEventListener('click', deleteAll);
 wrapperTodoElement.addEventListener('click', toggleCheckbox);
 wrapperTodoElement.addEventListener('click', deleteTodo);
-buttonAddElement.addEventListener('click', buildTodoTemplate);
+buttonAddElement.addEventListener('click', handleSubmitForm);
