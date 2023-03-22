@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: .2s;
+}
+.section{
+    padding: 20px 0;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 600px;
+    min-width: 500px;
+    min-height: 500px;
+    background-color: rgb(213, 213, 213);
+    border-radius: 20px;
+    border: 3px solid black;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+
+
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuButton{
+    width: 20%;
+    max-width: 150px;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 15px 10px 10px;
+    background-color: rgb(108, 228, 207);
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+}
+.menuButton:hover{
+    background-color: rgb(5, 248, 208);
+}
+
+.input{
+    width: 55%;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 15px 10px 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.input:focus-visible{
+    outline: none;
+}
+
+
+
+
+.item{  
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 010px;
+    margin-top: 20px;
+    align-items: center;
+    background-color:inherit;
+}
+
+.item:hover{
+    background-color: rgb(165, 165, 165);
+    
+}
+
+.itemNew{
+    background-color: gray;
+}
+.itemNew:hover{
+    background-color: rgb(94, 93, 93);
+}
+
+
+.item__chek{
+    background-color: rgb(108, 228, 207);
+    height: 30px;
+    width: 40px;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+}
+.item__chek:hover{
+    background-color: rgb(2, 252, 210);
+}
+
+
+.item__text{
+    width: 70%;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 20px 10px 10px;
+    text-align: center;
+    background-color: white;
+    color: rgb(95, 95, 95);
+    font-weight: bold;
+    
+}
+.item__textNew{
+    text-decoration: line-through;
+}
+
+.item__end{
+    width: 15%;
+}
+
+.item__close{
+  position: relative;
+  left: 50%;
+}
+
+.item__date{
+    text-align: center;
+    background-color: white;
+    color: rgb(95, 95, 95);
+    font-weight: bold;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding-top: 3px;
+}
