@@ -158,7 +158,8 @@ function updateLocaleStorage(data){
 
 function render() {
     const data = getItems('todos');
-    const allCounter = JSON.parse(localStorage.getItem('todos'));
+    // const allCounter = JSON.parse(localStorage.getItem('todos'));
+    const allCounter = todos;
 
     if (!!allCounter) {
         const completedCounter = allCounter.filter(el => el['isChecked']);
@@ -225,7 +226,43 @@ function deleteAll() {
     render();
 };
 
+function deleteLast() {
+    const todos = JSON.parse(getItems());
+    todos.pop();
+    updateLocaleStorage(todos);
+    render();
+};
+
+function showAll() {
+    render();
+};
+
+function showCompleted() {
+    const todos = JSON.parse(getItems());
+    const completedTodos = todos.filter(el => el['isChecked']);
+    updateLocaleStorage(completedTodos);
+    render();
+    updateLocaleStorage(todos);
+};
+
+function searchTodos(e) {
+    const todos = document.querySelectorAll('.todo');
+
+    todos.forEach(el => {
+
+        const elText = el.querySelector('.innerText').innerText;
+
+        if (elText.includes(e.target.value)) {
+            el.setAttribute('style', 'display: flex')
+        } else el.setAttribute('style', 'display: none')
+    });
+};
+
 buttonOneElement.addEventListener('click', deleteAll);
 wrapperTodoElement.addEventListener('click', toggleCheckbox);
 wrapperTodoElement.addEventListener('click', deleteTodo);
 buttonAddElement.addEventListener('click', handleSubmitForm);
+buttonTwoElement.addEventListener('click', deleteLast);
+buttonFourElement.addEventListener('click', showAll);
+buttonFiveElement.addEventListener('click', showCompleted);
+inputTwoElement.addEventListener('keyup', searchTodos);
