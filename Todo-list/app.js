@@ -259,10 +259,17 @@ function searchTodos(e) {
 };
 
 buttonOneElement.addEventListener('click', deleteAll);
+buttonOneElement.addEventListener('Enter', deleteAll);
 wrapperTodoElement.addEventListener('click', toggleCheckbox);
 wrapperTodoElement.addEventListener('click', deleteTodo);
 buttonAddElement.addEventListener('click', handleSubmitForm);
+buttonAddElement.addEventListener('Enter', handleSubmitForm);
 buttonTwoElement.addEventListener('click', deleteLast);
 buttonFourElement.addEventListener('click', showAll);
 buttonFiveElement.addEventListener('click', showCompleted);
 inputTwoElement.addEventListener('keyup', searchTodos);
+inputElement.addEventListener('keypress', function (e) {
+    if(e.key === 'Enter') {
+        handleSubmitForm();
+    };
+});
