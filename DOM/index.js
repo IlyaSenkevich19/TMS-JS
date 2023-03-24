@@ -5,68 +5,28 @@ const body = document.body;
 
 body.appendChild(mainDiv);
 
-body.style.cssText = `
-    margin: 0 auto;
-    max-width:1500px;
-    height: 1000px;
-    display: flex;
-    justifay-constant: space-between;
-    align-items: center;
-`
-mainDiv.style.cssText = `
-    display: flex;  
-    justify-content: space-between;
-    flex-direction: column;
-    position: relative;
-    width: 85%;
-    height: 60%;
-    margin: 0 auto;
-    background-color: #D3D3D3;
-    border-radius: 20px;
-    border: 4px solid black;
-`
-const topButton = document.createElement('div');
-const bottomButton = document.createElement('div');
-const toDoText = document.createElement('div');
+const topButton = document.createElement("div");
+const bottomButton = document.createElement("div");
+const toDoText = document.createElement("div");
 mainDiv.appendChild(topButton);
 mainDiv.appendChild(bottomButton);
 mainDiv.appendChild(toDoText);
 
-topButton.style.cssText = `
-    display:flex;
-    justify-content: space-between;
-    width: 90%;
-    height: 15%;
-    margin: 0 auto;
-    margin-top: 10px;
-`
-bottomButton.style.cssText = `
-    display:flex;
-    justify-content: space-between;
-    width: 90%;
-    height: 15%;
-    margin: 0 auto;
-    margin-top: 10px;
-`
-toDoText.style.cssText =`
-    display:flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 90%;
-    height: 70%;
-    margin: 0 auto;
-   
-`
+topButton.classList.add("topButton");
+bottomButton.classList.add("bottomButton");
+toDoText.classList.add("toDoText");
 
+const topButtonDeleteAll = document.createElement("button");
+const topButtonDeleteLast = document.createElement("button");
+const topButtonEnterTodo = document.createElement("input");
+const topButtonAdd = document.createElement("button");
 
-const topButtonDeleteAll = document.createElement('div');
-const topButtonDeleteLast = document.createElement('div');
-const topButtonEnterTodo = document.createElement('input' );
-const topButtonAdd = document.createElement('div');
-
+topButtonDeleteAll.classList.add("topButtonDeleteAll");
+topButtonDeleteLast.classList.add("topButtonDeleteLast");
+topButtonEnterTodo.classList.add("topButtonEnterTodo");
+topButtonAdd.classList.add("topButtonAdd");
 
 topButtonEnterTodo.placeholder = "Enter todo...";
-
 
 topButton.appendChild(topButtonDeleteAll);
 topButton.appendChild(topButtonDeleteLast);
@@ -78,67 +38,17 @@ topButtonDeleteLast.textContent = `Delete Last`;
 topButtonEnterTodo.textContent = `Enter todo`;
 topButtonAdd.textContent = `Add`;
 
-topButtonDeleteAll.style.cssText =`
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
-    align-self: center;
-    width: 15%;
-    height: 70px;
-    color: black;
-    background-color: #7FFFD4;
-    border-radius: 10px;
-    border: 4px solid black;
-    font-size: 20px;
-`
-topButtonDeleteLast.style.cssText = `
-display:flex;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 15%;
-height: 70px;
-color: black;
-background-color: #7FFFD4;
-border-radius: 10px;
-border: 4px solid black;
-font-size: 20px;
-`
-topButtonEnterTodo.style.cssText = `
-display:flex;
-align-items: center;
-text-align: center;
-justify-content: space-around;
-align-self: center;
-width: 45%;
-height: 70px;
-color: black;
-background-color: white;
-border-radius: 10px;
-border: 4px solid black;
-font-size: 20px;
-`
-topButtonAdd.style.cssText = `
-display:flex;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 15%;
-height: 70px;
-color: black;
-background-color: #7FFFD4;
-border-radius: 10px;
-border: 4px solid black;
-font-size: 20px;
-`
+const bottomButtonAll = document.createElement("input");
+const bottomButtonCompleted = document.createElement("input");
+const bottomButtonShowAll = document.createElement("button");
+const bottomButtonShowCompleted = document.createElement("button");
+const bottomButtonSearch = document.createElement("input");
 
-
-const bottomButtonAll = document.createElement('div');
-const bottomButtonCompleted = document.createElement('div');
-const bottomButtonShowAll = document.createElement('div');
-const bottomButtonShowCompleted = document.createElement('div');
-const bottomButtonSearch = document.createElement('input');
-
+bottomButtonAll.classList.add("bottomButtonAll");
+bottomButtonCompleted.classList.add("bottomButtonCompleted");
+bottomButtonShowAll.classList.add("bottomButtonShowAll");
+bottomButtonShowCompleted.classList.add("bottomButtonShowCompleted");
+bottomButtonSearch.classList.add("bottomButtonSearch");
 
 bottomButton.appendChild(bottomButtonAll);
 bottomButton.appendChild(bottomButtonCompleted);
@@ -146,260 +56,129 @@ bottomButton.appendChild(bottomButtonShowAll);
 bottomButton.appendChild(bottomButtonShowCompleted);
 bottomButton.appendChild(bottomButtonSearch);
 
-
-bottomButtonAll.textContent = "All: 2";
-bottomButtonCompleted.textContent = "Completed: 1";
+bottomButtonAll.placeholder = "All: ";
+bottomButtonCompleted.placeholder = "Completed: 1";
 bottomButtonShowAll.textContent = "Show All";
 bottomButtonShowCompleted.textContent = "Show Completed";
-bottomButtonSearch.placeholder = "Search..."
+bottomButtonSearch.placeholder = "Search...";
 
-bottomButtonAll.style.cssText = `
-display:flex;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 6%;
-height: 70px;
-font-size: 22px;
-color: grey;
-`
-bottomButtonCompleted.style.cssText = `
-display:flex;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 12%;
-height: 70px;
-font-size: 20px;
-color: grey;
-`
-bottomButtonShowAll.style.cssText = `
-display:flex;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 23%;
-height: 70px;
-color: black;
-background-color: #7FFFD4;
-border-radius: 10px;
-border: 4px solid black;
-font-size: 20px;
-`
-bottomButtonShowCompleted.style.cssText = `
-display:flex;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 23%;
-height: 70px;
-color: black;
-background-color: #7FFFD4;
-border-radius: 10px;
-border: 4px solid black;
-font-size: 20px;
-`
-bottomButtonSearch.style.cssText = `
-display:flex;
-text-align: center;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 23%;
-height: 70px;
-color: black;
-border-radius: 10px;
-border: 4px solid black;
-font-size: 20px;
-`
+const todoListFirst = document.createElement("div");
+const todoListSecond = document.createElement("div");
 
+todoListFirst.classList.add("todoListFirst");
+todoListSecond.classList.add("todoListSecond");
 
-const todoListFirst = document.createElement('div');
-const todoListSecond = document.createElement('div');
+//toDoText.appendChild(todoListFirst);
+// toDoText.appendChild(todoListSecond);
 
-toDoText.appendChild(todoListFirst);
-toDoText.appendChild(todoListSecond);
+const todoListFirstDone = document.createElement("button");
+const todoListFirstText = document.createElement("div");
+const todoListFirstDate = document.createElement("div");
 
-todoListFirst.style.cssText = `
-display:flex;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 70%;
-height: 40%;
-margin: 0 auto;
-border-radius: 10px;
-border: 4px solid black;
-margin-top: 20px;
-background-color: grey;
-`
+todoListFirstDone.classList.add("todoListFirstDone");
+todoListFirstText.classList.add("todoListFirstText");
+todoListFirstDate.classList.add("todoListFirstDate");
 
-todoListSecond.style.cssText = `
-display:flex;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 70%;
-height: 40%;
-margin: 0 auto;
-border-radius: 10px;
-border: 4px solid black;
-margin-bottom: 20px
-`
+const todoListFirstDateExit = document.createElement("button");
+const todoListFirstDateD = document.createElement("div");
 
+todoListFirstDateExit.classList.add("todoListFirstDateExit");
+todoListFirstDateD.classList.add("todoListFirstDateD");
 
-const todoListFirstDone = document.createElement('div');
-const todoListFirstText = document.createElement('input');
-const todoListFirstDate = document.createElement('div');
+todoListFirstDone.textContent = "V";
+todoListFirstText.placeholder = "Todo text";
+todoListFirstDateD.placeholder = "Date";
+todoListFirstDateExit.textContent = "X";
 
+const id = new Date();
+    const todos = topButtonEnterTodo.value;
+    const data = new Date();
+    let todosText = null;
 
-todoListFirst.appendChild(todoListFirstDone);
-todoListFirst.appendChild(todoListFirstText);
-todoListFirst.appendChild(todoListFirstDate);
+function enter() {
+  if (topButtonEnterTodo.value) {
+    ++bottomButtonAll.value;
+    
+     todosText = `<div class = 'todoListFirst' id'${id}'>
+        <button class = "todoListFirstDone"></button>
+        <div class = 'todoListFirstText'>${topButtonEnterTodo.value}</div>
+        <div class = "todoListFirstDate">
+        <button class = 'todoListFirstDateExit'>X</button>
+        <div class = 'todoListFirstDateD'>${data.toLocaleDateString()}</div>
+        </div>
+        </div>
+        `;
+    const wrar = document.createElement("div");
+    wrar.classList.add("wrarr");
+    wrar.innerHTML = todosText;
+    topButtonEnterTodo.value = "";
+    return toDoText.append(wrar);
+  }
+}
 
-const todoListFirstDateExit = document.createElement('div');
-const todoListFirstDateD = document.createElement('input');
+function DeleteAll() {
+  bottomButtonAll.value = 0;
+  bottomButtonCompleted.value = 0;
+  return (toDoText.innerHTML = "");
+}
 
-todoListFirstDate.appendChild(todoListFirstDateExit);
-todoListFirstDate.appendChild(todoListFirstDateD);
+function DeleteLast() {
+   return toDoText.lastChild.remove(), --bottomButtonAll.value;
 
+    
+}
 
-todoListFirstText.placeholder = "Todo text"
-todoListFirstDateD.placeholder = "Date"
-todoListFirstDateExit.textContent = "X"
+function deleteTodo({ target }) {
+  if (target.classList.contains("todoListFirstDateExit")) {
+    --bottomButtonAll.value;
+    return target.parentElement.parentElement.parentElement.remove();
+  }
+}
 
-
-
-todoListFirstDone.style.cssText = `
-    width: 8%;
-    height: 25%;
-    background-color: #7FFFD4;
-    border-radius: 10px;
-    border: 4px solid black;
-    font-size: 20px;
-`
-
-todoListFirstText.style.cssText = `
-display:flex;
-text-align: center;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 55%;
-height: 70px;
-color: black;
-border-radius: 10px;
-border: 1px solid white;
-font-size: 20px;
-`
-
-todoListFirstDate.style.cssText = `
-    display: flex;
-    justify-content: space-between;    
-    flex-direction: row-reverse; 
-    flex-wrap: wrap;
-    width: 20%;
-    height: 90%;
+function done({ target }) {
+  if (target.classList.contains("todoListFirstDone") && !target.parentElement.parentElement.classList.contains("done1")){
+    target.parentElement.parentElement.classList.add("done1");
+  ++bottomButtonCompleted.value;
+  }
   
-`
-todoListFirstDateExit.style.cssText = `
-width: 35%;
-height: 22%;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #7FFFD4;
-border-radius: 10px;
-border: 4px solid black;
-font-size: 20px;
-
-`
-todoListFirstDateD.style.cssText = `
-display: flex;
-text-align: center;
-width: 70%;
-height: 20%;
-border-radius: 6px;
-border: 1px solid white;
-font-size: 20px;
-margin-bottom: 10px;
-`
-
-
-
-const todoListSecondDone = document.createElement('div');
-const todoListSecondText = document.createElement('input');
-const todoListSecondDate = document.createElement('div');
-
-
-todoListSecond.appendChild(todoListSecondDone);
-todoListSecond.appendChild(todoListSecondText);
-todoListSecond.appendChild(todoListSecondDate);
-
-const todoListSecondDateExit = document.createElement('div');
-const todoListSecondDateD = document.createElement('input');
-
-todoListSecondDate.appendChild(todoListSecondDateExit);
-todoListSecondDate.appendChild(todoListSecondDateD);
-
-
-todoListSecondText.placeholder = "Todo text"
-todoListSecondDateD.placeholder = "Date"
-todoListSecondDateExit.textContent = "X"
-
-
-
-todoListSecondDone.style.cssText = `
-    width: 8%;
-    height: 25%;
-    background-color: #7FFFD4;
-    border-radius: 10px;
-    border: 4px solid black;
-    font-size: 20px;
-`
-
-todoListSecondText.style.cssText = `
-display:flex;
-text-align: center;
-align-items: center;
-justify-content: space-around;
-align-self: center;
-width: 55%;
-height: 70px;
-color: black;
-border-radius: 10px;
-border: 1px solid white;
-font-size: 20px;
-`
-
-todoListSecondDate.style.cssText = `
-    display: flex;
-    justify-content: space-between;    
-    flex-direction: row-reverse; 
-    flex-wrap: wrap;
-    width: 20%;
-    height: 90%;
+  else if (target.parentElement.parentElement.classList.contains("done1")){
+    target.parentElement.parentElement.classList.remove("done1");
+    --bottomButtonCompleted.value;
   
-`
-todoListSecondDateExit.style.cssText = `
-width: 35%;
-height: 22%;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #7FFFD4;
-border-radius: 10px;
-border: 4px solid black;
-font-size: 20px;
+  }
 
-`
-todoListSecondDateD.style.cssText = `
-display: flex;
-text-align: center;
-width: 70%;
-height: 20%;
-border-radius: 6px;
-border: 1px solid white;
-font-size: 20px;
-margin-bottom: 10px;
-`
+  else if (!target.parentElement.parentElement.classList.contains("done1")){
+    bottomButtonCompleted.value = 0;
+  }
+}
+
+
+function ShowCompleted(){
+
+let elee = toDoText.childNodes;
+for (i = 0; i < elee.length; i++){
+
+if(elee[i].classList.contains("done1")){
+  console.log(elee[i])
+  console.log("1")
+}
+else if(!elee[i].classList.contains("done1")){
+console.log("2")
+  return alert("Нет выполненных задач")
+
+}
+else if (toDoText){
+  console.log("3")
+  return alert("Нет задач")
+}
+}
+}
+
+
+topButtonAdd.addEventListener("click", enter);
+topButtonDeleteAll.addEventListener("click", DeleteAll);
+topButtonDeleteLast.addEventListener("click", DeleteLast);
+toDoText.addEventListener("click", deleteTodo);
+toDoText.addEventListener("click", done);
+bottomButtonShowCompleted.addEventListener("click", ShowCompleted)
+
