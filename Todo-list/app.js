@@ -2,6 +2,7 @@ const mainDivElement = document.createElement('div');
 mainDivElement.classList.add('main');
 
 document.getElementById('root').append(mainDivElement);
+
 const buttonOneElement = document.createElement('button');
 buttonOneElement.classList.add('button');
 buttonOneElement.textContent = 'Delete All';
@@ -39,6 +40,7 @@ innerOneElement.style.backgroundColor = 'rgb(146, 146, 146)';
 const innerTwoElement = document.createElement('div');
 innerTwoElement.classList.add('todo');
 const wrapperTodoElement = document.createElement('div');
+wrapperTodoElement.classList.add('wrapper');
 
 mainDivElement.prepend(
     buttonOneElement,
@@ -158,8 +160,8 @@ function updateLocaleStorage(data){
 
 function render() {
     const data = getItems('todos');
-    // const allCounter = JSON.parse(localStorage.getItem('todos'));
-    const allCounter = todos;
+    const allCounter = JSON.parse(localStorage.getItem('todos'));
+    // const allCounter = todos;
 
     if (!!allCounter) {
         const completedCounter = allCounter.filter(el => el['isChecked']);
@@ -227,10 +229,12 @@ function deleteAll() {
 };
 
 function deleteLast() {
-    const todos = JSON.parse(getItems());
-    todos.pop();
-    updateLocaleStorage(todos);
-    render();
+    if(todos.length >= 1) {
+        const todos = JSON.parse(getItems());
+        todos.pop();
+        updateLocaleStorage(todos);
+        render();
+    }
 };
 
 function showAll() {
@@ -238,11 +242,11 @@ function showAll() {
 };
 
 function showCompleted() {
-    const todos = JSON.parse(getItems());
-    const completedTodos = todos.filter(el => el['isChecked']);
-    updateLocaleStorage(completedTodos);
-    render();
-    updateLocaleStorage(todos);
+    const todos = document.querySelectorAll('.todo');
+
+    todos.forEach(el => el.classList.contains('checked')
+    ? el.setAttribute('style', 'display: flex')
+    : el.setAttribute('style', 'display: none'));
 };
 
 function searchTodos(e) {
