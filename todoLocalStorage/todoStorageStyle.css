@@ -1,0 +1,128 @@
+.upperBlock {
+    width: 90%;
+    height: 100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .upButton {
+    width: 23%;
+    height: 80%;
+    background: aqua;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    color: Grey;
+  }
+  .upperInput {
+    width: 40%;
+    height: 70%;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: silver;
+    outline-style: none;
+  }
+  
+  .mediumDiv {
+    width: 90%;
+    height: 150px;
+    margin: 50px auto;
+    border: 5px solid black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+  }
+  .mediumDiv.checked {
+    width: 90%;
+    height: 150px;
+    margin: 50px auto;
+    border: 5px solid black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    background: DimGrey;
+    box-shadow: 0px 5px 10px 2px rgba(15, 44, 65, 0.72);
+  }
+  .mediumInput {
+    width: 60%;
+    height: 50%;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: DimGrey;
+    outline-style: none;
+    text-decoration: none;
+  }
+  .mediumInput.checked {
+    width: 60%;
+    height: 50%;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: DimGrey;
+    outline-style: none;
+    text-decoration: line-through;
+  }
+  .unchecked {
+    width: 10%;
+    height: 35%;
+    background: aqua;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    color: Grey;
+  }
+  .unchecked.checked {
+    width: 10%;
+    height: 35%;
+    background: aqua;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    color: Grey;
+    box-shadow: 0px 4px 10px 9px  blue;
+    background-color: yellow;
+  }
+  .thirdMediumDiv {
+    width: 20%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .upDiv {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .cross {
+    width: 50%;
+    height: 95%;
+    background: aqua;
+    border: 5px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    color: Grey;
+    text-align: center;
+  }
+  .date {
+    height: 40%;
+    width: 97%;
+    border-radius: 10px;
+    font-size: 25px;
+    text-align: center;
+    color: grey;
+    border: none;
+    outline-style: none;
+  }
+  
