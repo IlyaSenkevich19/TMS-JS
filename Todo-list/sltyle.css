@@ -38,7 +38,11 @@
 .button:focus,
 .checkbox:focus,
 .reset:focus,
-.checkbox:focus {
+.checkbox:focus,
+.modale-1__cancel:hover,
+.modale-1__delete:hover,
+.modale-1__cancel:focus,
+.modale-1__delete:focus {
     background-color: rgb(69, 115, 144);
     color: aliceblue;
     box-shadow: 4px 8px 20px 4px rgba(0, 0, 0, 0.8);
@@ -48,7 +52,9 @@
 .button:active,
 .checkbox:active,
 .reset:active,
-.checkbox:active {
+.checkbox:active,
+.modale-1__cancel:active,
+.modale-1__delete:active  {
     background-color: rgb(108, 228, 207);
     color: rgb(95, 95, 95);
     box-shadow: none;
@@ -110,4 +116,59 @@
     max-height: 670px;
     padding: 10px;
     overflow: auto;
+}
+
+.wrapper-modale-1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 2, 2, 0.5);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.active {
+    z-index: 2;
+    display: flex;
+}
+
+.modale-1 {
+    width: 600px;
+    height: 250px;
+    background-color: rgb(213, 213, 213);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: solid 2px black;
+    border-radius: 20px;
+    flex-wrap: wrap;
+}
+
+.modale-1__cancel,
+.modale-1__delete {
+    width: 250px;
+    height: 60px;
+    background-color: rgb(108, 228, 207);
+    font-size: 24px;
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+    border: solid 2px black;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.modale-1__text {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 500px;
+    height: 90px;
+    border-radius: 6px;
+    color: rgb(95, 95, 95);
+    align-items: center;
+    font-size: 42px;
 }
