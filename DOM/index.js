@@ -57,7 +57,7 @@ bottomButton.appendChild(bottomButtonShowCompleted);
 bottomButton.appendChild(bottomButtonSearch);
 
 bottomButtonAll.placeholder = "All: ";
-bottomButtonCompleted.placeholder = "Completed: 1";
+bottomButtonCompleted.placeholder = "Completed: ";
 bottomButtonShowAll.textContent = "Show All";
 bottomButtonShowCompleted.textContent = "Show Completed";
 bottomButtonSearch.placeholder = "Search...";
@@ -136,20 +136,17 @@ function deleteTodo({ target }) {
 }
 
 function done({ target }) {
-  if (target.classList.contains("todoListFirstDone") && !target.parentElement.parentElement.classList.contains("done1")){
-    target.parentElement.parentElement.classList.add("done1");
+  if (target.classList.contains("todoListFirstDone") && !target.parentElement.classList.contains("done1")){
+    target.parentElement.classList.add("done1");
   ++bottomButtonCompleted.value;
   }
   
-  else if (target.parentElement.parentElement.classList.contains("done1")){
-    target.parentElement.parentElement.classList.remove("done1");
+  else if (target.classList.contains("todoListFirstDone")){
+    target.parentElement.classList.remove("done1");
     --bottomButtonCompleted.value;
-  
   }
 
-  else if (!target.parentElement.parentElement.classList.contains("done1")){
-    bottomButtonCompleted.value = 0;
-  }
+
 }
 
 

@@ -210,8 +210,8 @@ font-size: 20px;
 
 }
 
-.done1 .todoListFirst{
-    background-color: gray;
+.done1 {
+    background-color: gray !important; 
 }
 
 .todoListFirstDate{
