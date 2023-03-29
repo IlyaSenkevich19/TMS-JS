@@ -21,11 +21,9 @@ const menuButtonDel = document.createElement("button");
 toDoMenu.append(menuButtonDel);
 menuButtonDel.classList.add('menuButton');
 menuButtonDel.innerHTML = "Delete All";
-let delElemen = document.querySelectorAll('itemNew');
+let delElemen = document.querySelectorAll('.itemNew');
 menuButtonDel.addEventListener ('click', () => {
-    delElemen.forEach((element) => {
-        element.remove();
-    });
+    delElemen.forEach(e => e.remove());
 });
 
 
@@ -43,61 +41,62 @@ menuButtonAdd.innerHTML = "Add";
 
 // Добавление блоков
 menuButtonAdd.addEventListener('click', () =>{
-
-    
-
     const toDoItem = document.createElement("div");
     toDoItem.classList.add('item');
-    app.append(toDoItem)
+    app.append(toDoItem) 
+    toDoItem.push(todos)
+});
 
-    const itemChek = document.createElement("button");
-    toDoItem.append(itemChek);
-    itemChek.classList.add('item__chek');
-    itemChek.innerHTML =' '
-    let i = 0;
-    itemChek.addEventListener ('click', ()=>{
-    i++;   
-    if( i%2===0){
-        itemChek.innerHTML =''
-    } else {
-        itemChek.innerHTML ='✓'
-    };
-    if (itemChek.innerHTML ==='✓' ){
-        toDoItem.classList.add('itemNew');
-        itemText.classList.add('item__textNew');
-    } else{
-        toDoItem.classList.remove('itemNew');
-        itemText.classList.remove('item__textNew');
-    };
-
-    });
+const itemChek = document.createElement("button");
+toDoItem.append(itemChek);
+itemChek.classList.add('item__chek');
+itemChek.innerHTML =' '
+let i = 0;
+itemChek.addEventListener ('click', ()=>{
+i++;   
+if( i%2===0){
+    itemChek.innerHTML =''
+} else {
+    itemChek.innerHTML ='✓'
+};
+if (itemChek.innerHTML ==='✓' ){
+    toDoItem.classList.add('itemNew');
+    itemText.classList.add('item__textNew');
+} else{
+    toDoItem.classList.remove('itemNew');
+    itemText.classList.remove('item__textNew');
+};
+});
     
 
     
-    const itemText = document.createElement("p");
-    toDoItem.append(itemText);
-    itemText.classList.add('item__text');
-    itemText.innerHTML = menuInput.value;
-    menuInput.value = "";
+const itemText = document.createElement("p");
+toDoItem.append(itemText);
+itemText.classList.add('item__text');
+itemText.innerHTML = menuInput.value;
+menuInput.value = "";
 
-    const itemEnd = document.createElement("div");
-    toDoItem.append(itemEnd);
-    itemEnd.classList.add('item__end');
+const itemEnd = document.createElement("div");
+toDoItem.append(itemEnd);
+itemEnd.classList.add('item__end');
 
-    const itemClose = itemChek.cloneNode();
-    itemEnd.append(itemClose);
-    itemClose.classList.add('item__close');
-    itemClose.innerHTML = "X";
-    itemClose.addEventListener ('click' ,()=>{
-        toDoItem.remove();
-    })
-
-    let date = new Date();
-    const itemDate = document.createElement("p");
-    itemEnd.append(itemDate);
-    itemDate.innerHTML = date.getDate() +'.0'+ date.getMonth()  +'.'+ date.getFullYear();
-    itemDate.classList.add('item__date');
-    
+const itemClose = itemChek.cloneNode();
+itemEnd.append(itemClose);
+itemClose.classList.add('item__close');
+itemClose.innerHTML = "X";
+itemClose.addEventListener ('click' ,()=>{
+    toDoItem.remove();
 })
 
-   
+let date = new Date();
+const itemDate = document.createElement("p");
+itemEnd.append(itemDate);
+itemDate.innerHTML = date.getDate() +'.0'+ date.getMonth()  +'.'+ date.getFullYear();
+itemDate.classList.add('item__date');
+
+
+// localStorage
+
+const todos = [1,2];
+localStorage.setItem('test', 1);
+
