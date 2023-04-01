@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(225, 223, 218);
+}
+#timer {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 700px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+button {
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 30px;
+    box-shadow: 5px 5px 5px 2px rgb(145, 144, 144);
+    text-transform: uppercase;
+}
+button:active {
+    box-shadow: none;
+    transition: .3s;
+}
+#start {
+    background-color: rgb(139, 182, 139);
+}
+#start:hover {
+    background-color: rgb(75, 148, 75);
+}
+#start:active {
+    background-color: rgb(86, 209, 86);
+}
+#reset {
+    background-color: rgb(223, 147, 147);
+}
+#reset:hover {
+    background-color: rgb(215, 106, 106);
+}
