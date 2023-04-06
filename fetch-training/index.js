@@ -12,9 +12,9 @@ function getTodos() {
 function printTodos(items) {
     const list = document.createElement('ul');
     document.body.prepend(list);
-    items.forEach(item => {
+    items.forEach(({id, title}) => {
         const listItem = document.createElement('li');
-        listItem.textContent = item.id + ' ' + item.title;
+        listItem.textContent = `${id} ${title}`;
         list.append(listItem);
     });
 };
