@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.third__div {
+    margin: 20px 20px;
+    padding: 100px 20px;
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgb(199, 191, 191);
+}
+.todo__unit {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid black;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+.todo__menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.delete__button {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: aquamarine;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.add__button {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: aquamarine;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.enter__input {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+.todo__confirm {
+    margin: 10px 10px;
+    border: 2px solid  black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: aquamarine;
+}
+.todo__cancel {
+    margin: 10px 10px;
+    border: 2px solid  black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: aquamarine;
+}
+.todo__text {
+    width: 70%;
+    height: 30px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 17px;
+    font-weight: bold;
+    color: rgb(158, 151, 143);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.todo__date {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(158, 151, 143);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
