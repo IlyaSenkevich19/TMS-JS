@@ -14,6 +14,7 @@ function printTodos(items) {
     document.body.prepend(list);
     items.forEach(({id, title}) => {
         const listItem = document.createElement('li');
+        listItem.style = 'list-style: none';
         listItem.textContent = `${id} ${title}`;
         list.append(listItem);
     });
